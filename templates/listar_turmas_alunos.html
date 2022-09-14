@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<div class="conteudo-principal">
+    <h2> Alunos - {{ codigo_turma }} </h2>
+
+    <div class="conteudo-tabela">
+
+        <table>
+            <!-- cabeçalho da tabela -->
+            <tr>
+                <th>
+                    Matricula
+                </th>
+
+                <th>
+                    Nome
+                </th>
+
+                <th>
+                    CPF
+                </th>
+
+                <th>
+                    Telefone
+                </th>
+
+                <th>
+                    E-mail
+                </th>
+            </tr>
+
+            <!-- conteudo(corpo) da tabela -->
+            {% if alunos %}
+                {% for aluno in alunos %}
+                <tr>
+                    <td>
+                        {{ aluno[0] }}
+                    </td>
+                    <td>
+                        {{ aluno[1] }}
+                    </td>
+                    <td>
+                        {{ aluno[2] }}
+                    </td>
+                    <td>
+                        {{ aluno[3] }}
+                    </td>
+                    <td>
+                        {{ aluno[4] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <td colspan="5"> Sem alunos nessa turma. </td>
+            {% endif %}
+        </table>
+
+        <a href="/listar/turmas" class="botao-primario"> Voltar </a>
+    </div>
+</div>
+{% endblock %}

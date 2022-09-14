@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<div class="conteudo-principal">
+    <h2> Lista Turmas </h2>
+
+    <div class="conteudo-tabela">
+        <a href="/cadastro/turma" class="botao-primario"> Criar Turma </a>
+
+        <table>
+            <tr>
+                <th>
+                    Código
+                </th>
+
+                <th>
+                    Periodo
+                </th>
+
+                <th>
+                    Data Inicio
+                </th>
+
+                <th>
+                    Data Fim
+                </th>
+
+                <th>
+                    Cód. Curso
+                </th>
+
+                <th>
+                    Mat. Professor
+                </th>
+            </tr>
+
+            <!-- conteudo(corpo) da tabela -->
+            {% if turmas %}
+                {% for turma in turmas %}
+                <tr>
+                    <td>
+                        {{ turma[0] }}
+                    </td>
+                    <td>
+                        {{ turma[1] }}
+                    </td>
+                    <td><input type="date" value="{{ turma[2] }}" disabled></td>
+                    <td><input type="date" value="{{ turma[3] }}" disabled></td>
+                    <td>
+                        {{ turma[4] }} - {{ turma[5] }}
+                    </td>
+                    <td>
+                        {{ turma[6] }} - {{ turma[7] }}
+                    </td>
+                    <td>
+                        <a href="/listar/turmas_alunos/{{ turma[0] }}" class="botao-primario">Ver Alunos</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <td colspan="7"> Sem turmas cadastradas. </td>
+            {% endif %}
+        </table>
+
+        <a href="/" class="botao-primario"> Voltar </a>
+    </div>
+</div>
+{% endblock %}    

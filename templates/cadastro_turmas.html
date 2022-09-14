@@ -1,0 +1,99 @@
+<!--
+    A instrução para definir o HTML que terá a estrutura básica de toda a pagina que será desenvolvida dentro da aplicação web
+-->
+
+{% extends "base.html" %} 
+
+{% block conteudo %}
+
+<!--
+    O block (bloco) é o comando utilização para que o JINJA consiga
+    substituir o conteúdo dentro da minha página de base
+
+    No caso especifico existe um bloco que se chama conteudo
+-->
+
+{% if mensagem != None %}
+<div class="erro">
+    <h4> 
+        {{ mensagem }} 
+    </h4>
+</div>
+{% endif %}
+
+<div class="conteudo-principal">
+    <h2> Cadastro Turmas </h2>
+    <div class="conteudo-formulario">
+        <form method="post">
+            <div class="campos-formulario">  
+                <label for="data_inicio">Data Inicio</label>
+                <input type="date" name="data_inicio" id="data_inicio" required>
+            </div>
+            
+            <div class="campos-formulario">
+                <label for="data_fim">Data Fim</label>
+                <input type="date" name="data_fim" id="data_fim" required>
+            </div>
+            
+            <div class="campos-formulario">
+                <label for="periodo">Periodo</label>
+                <select name="periodo" id="periodo" required>
+                    <option value="" selected disabled> Escolha </option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+            </div>
+
+            <div class="campos-formulario">
+                <label for="professor">Professor</label>
+                <select name="professor" id="professor" required>
+                    <option value="" selected disabled> Escolha </option>
+                    <!-- Conteudo da lista -->
+                    {% for professor in professores %}
+                    <option value="{{professor[0]}}">{{professor[1]}}</option>
+                    {% endfor%}
+                </select>
+            </div>
+
+            <div class="campos-formulario">
+                <label for="cursos">Cursos</label>
+                <select name="cursos" id="cursos" required>
+                    <!-- Conteudo da lista -->
+                    <option value="" selected disabled> Escolha </option>
+                    {% for curso in cursos %}
+                    <option value="{{curso[0]}}">{{curso[1]}}</option>
+                    {% endfor%}
+                </select>
+            </div>
+
+            <h3> Seleção de Alunos </h3>
+            <img src="/static/img/Atencao.png" alt="Atenção"> Mínimo de 3.
+
+            <!-- A proposta é que a matricula acontence no mesmo momento de 
+                cadastro de turma, Neste caso utilizamos o checkbox como uma 
+                forma de selecionar aluno, já que uma turma pode ter mais de um aluno
+                IMPORTANTE: o atribut name dever igual para todas as tags para que 
+                possamos criar a lista(id tem que ser diferente) 
+            -->
+
+            {% for aluno in alunos %}
+            <div class="conteudo-alunos">
+                <input
+                    type="checkbox"
+                    name="alunos"
+                    id="{{aluno[0]}}"
+                    value="{{aluno[0]}}"
+                />
+                <label for="{{aluno[0]}}">{{aluno[0]}} - {{aluno[1]}}</label>
+            </div>
+            {% endfor%}
+
+            <button type="submit"> Cadastrar </button>
+        </form>
+
+        <a href="/listar/turmas" class="botao-primario"> Voltar </a>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="conteudo-principal">
+    <h2> Cadastro Cursos </h2>
+    <div class="conteudo-formulario">
+        <form method="post">
+            <div class="campos-formulario">
+            <label for="nome_curso"> Nome Completo: </label>
+            <input type="text" name="nome_curso" id="nome_curso" required>
+            </div>
+            
+            <div class="campos-formulario">
+            <label for="classificacao_curso"> Classificação: </label>
+            <input type="text" name="classificacao_curso" id="classificacao_curso" required>
+            </div>
+            
+            <div class="campos-formulario">
+            <label for="descricao_curso"> Descrição: </label>
+            <input type="text" name="descricao_curso" id="descricao_curso">
+            </div>
+
+            <button type="submit"> Cadastrar </button>
+        </form>
+        
+        <a href="/listar/cursos" class="botao-primario"> Voltar </a>
+    </div>
+</div>
+
+{% endblock %}

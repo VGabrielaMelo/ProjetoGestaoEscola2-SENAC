@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<div class="conteudo-principal">
+    <h2> Lista Cursos </h2>
+
+    <div class="conteudo-tabela">
+        <a href="/cadastro/cursos" class="botao-primario"> Adicionar Cursos </a>
+
+        <table>
+            <tr>
+                <th>
+                    Código
+                </th>
+
+                <th>
+                    Nome
+                </th>
+
+                <th>
+                    Classificação
+                </th>
+
+                <th>
+                    Ativo
+                </th>
+
+                <th>
+                    Descrição
+                </th>
+            </tr>
+
+            <!-- conteudo(corpo) da tabela -->
+            {% if cursos %}
+                {% for curso in cursos %}
+                <tr>
+                    <td>
+                        {{ curso[0] }}
+                    </td>
+                    <td>
+                        {{ curso[1] }}
+                    </td>
+                    <td>
+                        {{ curso[2] }}
+                    </td>
+                    <td>
+                        {% if curso[3] == 1 %} Sim {% else %} Não {% endif %}
+                    </td>
+                    <td>
+                        {{ curso[4] }}
+                    </td>
+                    <td>
+                        <a href="/editar/curso/{{ curso[0] }}" class="botao-primario">Editar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <td colspan="6"> Sem cursos cadastrados. </td>
+            {% endif %}
+        </table>
+
+        <a href="/" class="botao-primario"> Voltar </a>
+
+    </div>
+</div>
+{% endblock %}    

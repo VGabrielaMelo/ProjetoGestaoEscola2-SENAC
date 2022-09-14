@@ -1,0 +1,270 @@
+/* criando variaveis, com as cores */
+:root {
+    --azul-fraco: rgb(220, 240, 247); 
+    --azul-escuro: rgb(12, 44, 82);
+    --preto: rgb(48, 48, 48);
+    --azul-normal: rgb(94, 157, 200);
+    --verde-normal: rgb(21, 238, 108);
+}
+
+/* resetando as config do css, que o navegador cria */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font google */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--azul-fraco)
+}
+
+a {
+    text-decoration: none;
+}
+
+/* botões */
+.botao-primario { 
+    display: flex;
+    background-color: var(--azul-escuro);
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+}
+
+.botao-primario:hover {
+    background-color: var(--azul-normal);
+    color: #FFFFFF;
+    transition: 300ms;
+}
+
+/*  Cabeçalho */
+header .conteudo-header { 
+    background-color: var(--azul-escuro);
+    padding: 1rem;
+}
+
+header .conteudo-header h1 {
+    color: #FFFFFF
+}
+
+/* Conteudo Principal */
+main .conteudo-principal { 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+main .conteudo-principal h2 {
+    color: var(--preto);
+    font-size: 3rem;
+    margin: 1rem 0 1rem 0;
+    letter-spacing: .1rem;
+}
+
+main .conteudo-principal .menu {
+    width: 30rem;
+}
+
+main .conteudo-principal .menu .botao-primario {
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1rem 0 1rem 0;
+}
+
+/* Tabela */
+main .conteudo-tabela {
+    width: 80rem;
+}
+
+main .conteudo-tabela .botao-primario {
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+main .conteudo-tabela table {
+    margin: 2rem 0 2rem 0;
+    width: 100%;
+}
+
+main .conteudo-tabela table th {
+    background: var(--azul-escuro);
+    color: #FFFFFF;
+    padding: 1rem;
+}
+
+main .conteudo-tabela table td {
+    background: #FFFFFF;
+    color: var(--preto);
+    padding: 1rem;
+}
+
+main .conteudo-principal .conteudo-tabela table td input[type="date"]{
+    text-align: center;
+}
+
+/* Cadastro */
+main .conteudo-principal .conteudo-formulario {
+    width: 40rem;
+}
+
+main .conteudo-principal .conteudo-formulario .campos-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+main .conteudo-principal .conteudo-formulario .campos-formulario label{
+    font-size: 1.2rem;
+    color: var(--preto);
+    text-align: left;
+}
+
+main .conteudo-principal .conteudo-formulario .campos-formulario input {
+    width: 100%;
+    height: 3.4rem;
+    border-radius: 2rem;
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    color: var(--preto);
+    font-size: 1.2rem;
+    border: 1px solid var(--azul-escuro);
+}
+
+/* # Cadastro turmas */
+main .conteudo-principal .conteudo-formulario .campos-formulario select {
+    width: 100%;
+    border-radius: 2rem;
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    color: var(--preto);
+    font-size: 1.2rem;
+    border: 1px solid var(--azul-escuro);
+}
+
+/* main .conteudo-principal .conteudo-formulario .campos-formulario select:focus {
+    outline: none;
+    border: 1px solid var(--azul-normal);
+} */
+
+main .conteudo-principal .conteudo-formulario .campos-formulario textarea {
+    text-align: left;
+    resize: none;
+    border-radius: 1rem;
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    color: var(--preto);
+    font-size: 1.2rem;
+    border: 1px solid var(--azul-escuro);
+}
+
+
+/* main .conteudo-principal .conteudo-formulario .campos-formulario textarea:focus {
+    outline: none;
+    border: 1px solid var(--azul-normal);
+} */
+
+main .conteudo-principal .conteudo-formulario .checkbox input[type=checkbox] {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* main .conteudo-principal .conteudo-formulario .campos-formulario input:focus {
+    outline: none;
+    border: 1px solid var(--azul-normal);
+} */
+
+main .conteudo-principal .conteudo-formulario button {
+    /* display: flex; */
+
+    background: var(--azul-normal);
+    color: #FFFFFF;
+    
+    width: 100%;
+    height: 2rem;
+    margin: 1rem 0 1rem 0;
+
+    text-align: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    
+    border-radius: 3rem;
+    border: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+main .conteudo-principal .conteudo-formulario button:hover {
+    background: var(--verde-normal);
+    color: #FFFFFF;
+    transition: 300ms;
+}
+
+main .conteudo-principal .conteudo-formulario .botao-primario {
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Cadastro turmas alunos */
+main .conteudo-principal .conteudo-formulario h3 {
+    margin: 1rem 0 1rem 0;
+    font-size: 1rem;
+    color: var(--preto);
+    letter-spacing: .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .conteudo-principal .conteudo-formulario img {
+    margin-right: 0.5rem;
+}
+
+main .conteudo-principal .conteudo-formulario .conteudo-alunos { 
+    display: flex;
+    align-items: center;
+    padding: 0.3rem;
+}
+
+main .conteudo-principal .conteudo-formulario .conteudo-alunos label {
+    padding: 0.3rem;
+}
+
+/* Mensagem de erro (alunos) */
+.erro {
+    background: #e7515a;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.erro h4 {
+    color: #ffffff;
+}
+
+/* Input Date */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input:disabled {
+    background: transparent;
+    border: 0;
+    color: var(--preto);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}

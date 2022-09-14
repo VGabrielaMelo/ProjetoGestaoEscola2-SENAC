@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<div class="conteudo-principal">
+    <h2> Lista Professores </h2>
+
+    <div class="conteudo-tabela">
+        <a href="/cadastro/professores" class="botao-primario"> Adicionar Professor </a>
+
+        <table>
+            <tr>
+                <th>
+                    Matricula
+                </th>
+
+                <th>
+                    Nome
+                </th>
+
+                <th>
+                    CPF
+                </th>
+
+                <th>
+                    Ativo
+                </th>
+
+                <th>
+                    Telefone
+                </th>
+
+                <th>
+                    E-mail
+                </th>
+
+                <th>
+                    Formação
+                </th>
+
+                <th>
+                    Especialidade
+                </th>
+            </tr>
+
+            <!-- conteudo(corpo) da tabela -->
+           
+            {% if professores %}
+                {% for professor in professores %}
+                <tr>
+                    <td>
+                        {{ professor[0] }}
+                    </td>
+                    <td>
+                        {{ professor[1] }}
+                    </td>
+                    <td>
+                        {{ professor[2] }}
+                    </td>
+                    <td>
+                        {{ professor[3] }}
+                    </td>
+                    <td>
+                        {{ professor[4] }}
+                    </td>
+                    <td>
+                        {% if professor[5] == 1 %}
+                            Sim
+                        {% else %}
+                            Não
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ professor[6] }}
+                    </td>
+                    <td>
+                        {{ professor[7] }}
+                    </td>
+                    <td>
+                        <a href="/editar/professor/{{ professor[0] }}" class="botao-primario"> Editar </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <td colspan="9"> Sem professores cadastrados. </td>
+            {% endif %}
+        </table>
+
+        <a href="/" class="botao-primario"> Voltar </a>
+    </div>
+</div>
+{% endblock %}

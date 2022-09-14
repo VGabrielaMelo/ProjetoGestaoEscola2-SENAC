@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="conteudo-principal">
+    <h2> Cadastro Alunos </h2>
+    <div class="conteudo-formulario">
+        <form method="post">
+            <div class="campos-formulario">
+            <label for="nome_aluno"> Nome Completo: </label>
+            <input type="text" name="nome_aluno" id="nome_aluno" required>
+            </div>
+            
+            <div class="campos-formulario">
+            <label for="cpf_aluno"> CPF: </label>
+            <input type="text" name="cpf_aluno" id="cpf_aluno" required>
+            </div>
+            
+            <div class="campos-formulario">
+            <label for="telefone_aluno"> Telefone: </label>
+            <input type="text" name="telefone_aluno" id="telefone_aluno">
+            </div>
+
+            <div class="campos-formulario">
+            <label for="email_aluno"> E-mail: </label>
+            <input type="email" name="email_aluno" id="email_aluno" required>
+            </div>
+
+            <button type="submit"> Cadastrar </button>
+        </form>
+        
+        <a href="/listar/alunos" class="botao-primario"> Voltar </a>
+    </div>
+</div>
+
+{% endblock %}

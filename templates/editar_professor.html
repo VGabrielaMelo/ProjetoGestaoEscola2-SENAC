@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <div class="conteudo-principal">
+    <h2> Editar Professor </h2>
+        <div class="conteudo-formulario">
+            <form method="post">
+                <div class="campos-formulario">
+                <label for="nome_professor"> Nome Completo: </label>
+                <input type="text" name="nome_professor" id="nome_professor" value="{{ professor[1] }}" required>
+                </div>
+
+                <div class="campos-formulario">
+                <label for="cpf_professor"> CPF: </label>
+                <input type="text" name="cpf_professor" id="cpf_professor" value="{{ professor[2] }}" required>
+                </div>
+
+                <div class="checkbox">
+                <label for="ativo_professor"> Ativo: </label>
+                {% if professor[3] == 1 %}
+                    <input type="checkbox" name="ativo_professor" id="ativo_professor" checked>
+                {% else %}
+                    <input type="checkbox" name="ativo_professor" id="ativo_professor">
+                </div>
+                {% endif %}
+
+                <div class="campos-formulario">
+                <label for="telefone_professor"> Telefone: </label>
+                <input type="text" name="telefone_professor" id="telefone_professor" value="{{ professor[4] }}">
+                </div>
+
+                <div class="campos-formulario">
+                <label for="email_professor"> E-mail: </label>
+                <input type="email" name="email_professor" id="email_professor" value="{{ professor[5] }}">
+                </div>
+
+                <div class="campos-formulario">
+                <label for="formacao_professor"> Formação: </label>
+                <input type="text" name="formacao_professor" id="formacao_professor" value="{{ professor[6] }}">
+                </div>
+
+                <div class="campos-formulario">
+                <label for="especialidade_professor"> Especialidade: </label>
+                <input type="text" name="especialidade_professor" id="especialidade_professor" value="{{ professor[7] }}">
+                </div>
+
+                <button type="submit"> Atualizar </button>
+            </form>
+            <a href="/listar/professores" class="botao-primario"> Voltar </a>
+        </div>
+    </div>
+
+
+{% endblock %}

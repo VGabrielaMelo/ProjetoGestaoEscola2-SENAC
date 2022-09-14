@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <div class="conteudo-principal">
+    <h2> Editar Alunos </h2>
+        <div class="conteudo-formulario">
+            <form method="post">
+                <div class="campos-formulario">
+                <label for="nome_aluno"> Nome Completo: </label>
+                <input type="text" name="nome_aluno" id="nome_aluno" value="{{ aluno[1] }}" required>
+                </div>
+
+                <div class="campos-formulario">
+                <label for="cpf_aluno"> CPF: </label>
+                <input type="text" name="cpf_aluno" id="cpf_aluno" value="{{ aluno[2] }}" required>
+                </div>
+
+                <div class="campos-formulario">
+                <label for="telefone_aluno"> Telefone: </label>
+                <input type="text" name="telefone_aluno" id="telefone_aluno" value="{{ aluno[3] }}">
+                </div>
+
+                <div class="campos-formulario">
+                <label for="email_aluno"> E-mail: </label>
+                <input type="email" name="email_aluno" id="email_aluno" value="{{ aluno[4] }}" required>
+                </div>
+
+                <button type="submit"> Atualizar </button>
+            </form>
+            <a href="/listar/alunos" class="botao-primario"> Voltar </a>
+        </div>
+    </div>
+
+{% endblock %}
